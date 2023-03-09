@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section-conten padding-y bg">
+
+{% include 'customer/sidebar.html' %}
+<main class="col-md-9">
+    <article class="card">
+    <header class="card-header">
+        <strong class="d-inline-block mr-3">Update profile</strong>
+    </header>
+    <div class="card-body">
+        <div class="text-right">
+            <img src="/media/userprofile/Passport_K77x8cK.jpg" alt="Profile Picture" width="100" style="border-radius:30px;">
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/accounts/edit_profile/" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="QBjVvmS2wwoYgYPCMeGcOHKoXl9Kh5MBJo7OdqfcH63jnyjkzWcvgSYCp6Pr4Qns">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>First Name</label>
+                            <input type="text" name="first_name" value="Beno" maxlength="50" class="form-control" required="" id="id_first_name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" name="last_name" value="Mwampamba" maxlength="50" class="form-control" required="" id="id_last_name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Phone Number</label>
+                            <input type="text" name="phone_number" value="0765100200" maxlength="50" class="form-control" id="id_phone_number">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Profile Picture</label>
+                            <input type="file" name="profile_picture" accept="image/*" class="form-control" id="id_profile_picture">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address Line 1</label>
+                        <input type="text" name="address_line_1" value="Kisota" maxlength="100" class="form-control" id="id_address_line_1">
+                    </div>
+                    <div class="form-group">
+                        <label>Address Line 2</label>
+                        <input type="text" name="address_line_2" value="Kigamboni" maxlength="100" class="form-control" id="id_address_line_2">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>City</label>
+                            <input type="text" name="city" value="Dar es Salaam" maxlength="20" class="form-control" id="id_city">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Town</label>
+                            <input type="text" name="town" value="Kigamboni" maxlength="20" class="form-control" id="id_town">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>Country</label>
+                            <input type="text" name="country" value="Tanzania" maxlength="20" class="form-control" id="id_country">
+                        </div>
+                    </div>
+                    <input type="submit" value="Update" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</article>
+</main>
+    </div> 
+  </div>
+</section>
+
+{% endblock %}
